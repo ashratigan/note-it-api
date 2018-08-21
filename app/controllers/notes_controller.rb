@@ -3,8 +3,7 @@ class NotesController < ProtectedController
 
   # GET /notes
   def index
-    @notes = Note.all
-
+    @notes = current_user.notes
     render json: @notes
   end
 
